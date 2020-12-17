@@ -1,0 +1,90 @@
+.user-area {
+
+    position: relative;
+
+    &__panel {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: $white;
+        border: 1px solid #ccc;
+        border-color: rgba(0,0,0,.2);
+        color: #000;
+        -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
+        box-shadow: 0 2px 10px rgba(0,0,0,.2);
+        display: none;
+        outline: none;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 44px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        -webkit-user-select: text;
+        width: 250px;
+    }
+
+    &__toggle-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+    }
+
+    &__avatar {
+        border-radius: 30px;
+    }
+
+    &__link {
+        outline: none;
+        cursor: pointer;
+        padding: 0;
+        color: #4d4d4d;
+        font-size: 1rem;
+        font-weight: 500;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0.2, 1);
+        -o-transition: background-color 0.3s cubic-bezier(0, 0, 0.2, 1);
+        transition: background-color 0.3s cubic-bezier(0, 0, 0.2, 1);
+        text-align: left;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &__icon {
+        font-weight: 300;
+        width: 30px;
+        height: inherit;
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        flex: none;
+        opacity: 0.85;
+    }
+
+    &__title {
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-break: break-all;
+        -webkit-user-select: none;
+        -webkit-box-flex: auto;
+        -ms-flex: auto;
+        flex: auto;
+    }
+
+    &.is-expanded {
+        .user-area {
+            &__panel {
+                display: block;
+            }
+        }
+    }
+}

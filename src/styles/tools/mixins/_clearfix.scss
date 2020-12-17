@@ -1,0 +1,22 @@
+//
+// Level: Tools
+// Sublevel: Mixins
+// 
+// 
+//
+
+//
+// Clear floating
+// 
+@mixin clearfix {
+  
+  &:before, 
+  &:after { 
+  	content: " "; 
+  	display: table; 
+  }
+  
+  &:after { 
+  	clear: both; 
+  }
+}

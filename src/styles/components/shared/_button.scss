@@ -1,0 +1,119 @@
+.button {
+  background-color: transparent;
+  padding: 0.5rem;
+  border: 1px solid $grey-40;
+  border-radius: 4px;
+  margin: 0;
+  display: inline-block;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--primary {
+    background-color: $blue;
+    border-color: $blue;
+    color: $white;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &--disabled {
+    opacity: 50%;
+    cursor: default;
+    color: $grey-60;
+    pointer-events: none;
+  }
+
+  &--control {
+    width: 42px;
+    height: 42px;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+  }
+
+  &--link {
+    border: none;
+    color: $blue;
+    padding: 0;
+
+    &:hover {
+      color: $blue;
+      text-decoration: underline;
+    }
+  }
+
+  &--action {
+    border: none;
+    border-radius: 0;
+  }
+
+  &.is-active .fa-smile {
+    color: $yellow;
+    animation: poke 1.5s ease-in-out;
+  }
+}
+
+// .button {
+
+//     background-color: transparent;
+//     border: none;
+//     display: inline-block;
+//     margin: 0;
+
+//     &.disabled {
+//         cursor: default;
+//         color: $grey-60;
+//     }
+
+//     &--expanded {
+//         width: 100%;
+//     }
+
+//     &--link {
+
+//         padding: 0;
+//         color: $blue;
+
+//         &:hover {
+//             color: darken($blue, 15%);
+//             text-decoration: underline;
+//         }
+//     }
+
+//     &--action {
+//         height: 42px;
+//         padding: 0 0.5rem;
+//         text-transform: uppercase;
+//         color: $grey-80;
+//     }
+
+//     &--control {
+//         height: 42px;
+//         padding: 0 0.5rem;
+//         font-size: 1.2rem;
+//     }
+
+//     &--primary {
+//         font-weight: bold;
+//         color: $blue;
+//     }
+
+//     &--header {
+//         background-color: transparent;
+//         border: none;
+//         cursor: pointer;
+//         width: 30px;
+//         height: 30px;
+//         padding: 0;
+//         font-size: 1rem;
+//     }
+
+//     &.is-active .fa-smile {
+//         color: $yellow;
+//         animation: poke 1.5s ease-in-out;
+//     }
+// }

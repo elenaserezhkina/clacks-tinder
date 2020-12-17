@@ -1,0 +1,14 @@
+abbr,
+acronym {
+  text-transform: uppercase;
+  font-size: 90%;
+  color: #374b5a;
+  cursor: help; }
+
+abbr {
+  text-transform: none; 
+}
+  
+  abbr[title] {
+    border-bottom: 1px dotted rgba(170, 170, 150, 0.35); 
+  }

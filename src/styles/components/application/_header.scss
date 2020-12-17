@@ -1,0 +1,45 @@
+.app-header {
+
+	height: 64px;
+	max-height: 64px;
+	backface-visibility: hidden;
+  border-bottom: 1px solid $grey-60;
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+
+  &.is-up {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  &__item {
+    
+    &--logo {
+      width: 200px;
+      padding: 0 0 0 0.5rem;
+
+      @include media-query('md') {
+        padding: 0 0 0 1rem;
+      }
+    }
+
+    &--navigation {
+      flex-grow: 1;
+    }
+
+    &--toolbar {
+      width: 200px;
+      padding: 0 0.5rem 0 0;
+      @include media-query('sm') {
+        padding: 0 1rem 0 0;
+      }
+    }
+  }
+}

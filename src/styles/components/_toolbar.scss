@@ -1,0 +1,14 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+
+  &__controls {
+  }
+
+  &__actions {
+  }
+
+  &--full-width {
+    margin: 0 -0.5rem;
+  }
+}

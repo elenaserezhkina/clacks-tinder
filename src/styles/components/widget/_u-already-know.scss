@@ -1,0 +1,16 @@
+.widget-u-already-know {
+  &__name-container {
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__text {
+    padding: 1rem 0.5rem;
+  }
+
+  &__refresh-button {
+    padding: 0.3rem 1rem;
+  }
+}

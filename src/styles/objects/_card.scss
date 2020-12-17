@@ -1,0 +1,36 @@
+.card {
+  border: 1px solid $grey-40;
+  background-color: $white;
+  border-radius: 2px;
+  display: block;
+  margin-bottom: 1rem;
+  transition: all 300ms ease-out;
+
+  &__header {
+    background-color: $grey-40;
+  }
+
+  &__body {
+    
+    padding: 1rem;
+    position: relative;
+
+    .card:hover & {
+      color: $grey;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    background-color: $grey-20;
+    border-top: 1px solid $grey-40;
+    padding: 1rem 1.5rem;
+  }
+
+  &[href]:hover {
+    border-color: $grey-60;
+  }
+}

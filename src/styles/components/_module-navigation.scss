@@ -1,0 +1,14 @@
+.module-navigation {
+  &__item {
+    padding: 1rem 0.5rem;
+    display: inline-block;
+
+    @include media-query('sm') {
+      padding: 1rem 1rem;
+    }
+
+    &.is-active {
+      color: $blue;
+    }
+  }
+}

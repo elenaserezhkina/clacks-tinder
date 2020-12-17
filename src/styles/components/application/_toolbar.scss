@@ -1,0 +1,49 @@
+.app-toolbar {
+
+    display: flex;
+    align-items: center;
+
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &__item {
+        padding: 0 0 0 15px;
+
+        &:first-child {
+            padding-left: 6px;
+        }
+
+        &--search {
+            padding-left: 0;
+
+            @include media-query('md') {
+                margin-right: auto;
+                width: 630px;
+            }
+        }
+
+        @include media-query('md') {
+            &--widget-panel {
+                display: none;
+            } 
+        }
+    }
+
+    &__link {
+        background-color: #ebebeb;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        border-radius: 32px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+
+        &.is-active,
+        &:hover {
+            background-color: #cccccc;
+            color: $black;
+        }
+    }
+}

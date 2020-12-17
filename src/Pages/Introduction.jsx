@@ -1,63 +1,132 @@
 import React, { useEffect, useState } from "react";
-import { bounceInDown, bounceInLeft } from "react-animations";
-import styled, { keyframes } from "styled-components";
-import Logo from "../Pictures/logo.svg";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 import "./Introduction.scss";
-import { Redirect } from "react-router-dom";
-
-const bounceInDownAnimation = keyframes`${bounceInDown}`;
-const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
-
-const LoveDiv = styled.div`
-  animation: 5s ${bounceInDownAnimation};
-`;
-const FromDiv = styled.div`
-  animation: 1s ${bounceInLeftAnimation};
-`;
-const ZeroDiv = styled.div`
-  animation: 1.5s ${bounceInLeftAnimation};
-`;
-const ToDiv = styled.div`
-  animation: 2s ${bounceInLeftAnimation};
-`;
-const HeroDiv = styled.div`
-  animation: 2.5s ${bounceInLeftAnimation};
-`;
+import { useUser } from "../UserProvider";
+import { useHistory } from "react-router-dom";
+import UserCard from "../Components/UserInfo/UserCard";
+import { UserActions } from "../UserProvider";
 
 function Introduction() {
-  const [redirect, setRedirect] = useState(false);
+  const history = useHistory();
+  const { user, matchInterests, dispatchUserAction } = useUser();
+  const [reason, setReason] = useState("");
+  const [interests, setInterests] = useState(
+    matchInterests.interests.map((interest) => ({ interest, checked: false }))
+  );
+  const [description, setDescription] = useState("Ich will nen Kaffee");
 
   useEffect(() => {
-    setTimeout(() => {
-      setRedirect(true);
-    }, 4000);
-  });
-  return redirect ? (
-    <Redirect to="/home" />
-  ) : (
-    <div className="introduction-container">
-      <div className="introduction-logo">
-        <img className="logo" src={Logo} alt="logo" />
+    setReason(user.reasons[0]);
+    setInterests(getInitialInterests());
+  }, []);
+
+  const getInitialInterests = () => {
+    return matchInterests.interests.map((interest) => {
+      if (user.interests.includes(interest)) {
+        return { interest, checked: true };
+      }
+      return { interest, checked: false };
+    });
+  };
+
+  const handleReasonChange = (e) => {
+    if (e.target.value) {
+      setReason(e.target.value);
+      dispatchUserAction({
+        type: UserActions.SET_REASONS,
+        payload: [e.target.value],
+      });
+    }
+  };
+
+  const handleInterestChange = (e) => {
+    const newInterests = interests.map(({ interest, checked }) => {
+      if (interest === e.target.innerText) {
+        return {
+          interest,
+          checked: !checked,
+        };
+      }
+      return {
+        interest,
+        checked,
+      };
+    });
+
+    setInterests(newInterests);
+
+    dispatchUserAction({
+      type: UserActions.SET_INTERESTS,
+      payload: newInterests.filter((interest) => interest.checked).map((interest) => interest.interest),
+    });
+  };
+
+  const handleImageLinkChange = (e) => {
+    dispatchUserAction({ type: UserActions.SET_FAKE_IMAGE, payload: e.target.value });
+  };
+
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    dispatchUserAction({ type: UserActions.SET_DESCRIPTION, payload: description });
+
+    history.push("/matching");
+  };
+
+  return (
+    <div className="row">
+      <div className="col-lg-4 col-xs-12">
+        <UserCard user={user} hasFakeImage />
       </div>
-      <div className="introduction-text-container">
-        <LoveDiv>
-          <h1 className="introduction-text-love">LOVE</h1>
-        </LoveDiv>
-        <div className="introduction-text">
-          <FromDiv>
-            <h1 className="introduction-text-from">From</h1>
-          </FromDiv>
-          <ZeroDiv>
-            <h1 className="introduction-text-zero">Zero</h1>
-          </ZeroDiv>
-          <ToDiv>
-            <h1 className="introduction-text-to">To</h1>
-          </ToDiv>
-          <div className="introduction-text-hero-container">
-            <HeroDiv>
-              <h1 className="introduction-text-hero">Hero</h1>
-            </HeroDiv>
-          </div>
+      <div className="col-lg-8 col-xs-12">
+        <div>
+          <input
+            type="text"
+            className="input bg-color-white"
+            placeholder="Fotolink einfügen"
+            onChange={handleImageLinkChange}
+          />
+        </div>
+        <div className="display-flex align-items-center margin-top-1">
+          <span className="color-black">Ich bin in der Laune für &nbsp;&nbsp;</span>
+          <FormControl>
+            <Select
+              labelId="demo-simple-select-filled-label"
+              id="demo-simple-select-filled"
+              value={reason}
+              onChange={handleReasonChange}
+            >
+              {matchInterests.reasons.map((reason, i) => (
+                <MenuItem key={`reason-${i}`} value={reason}>
+                  {reason}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="margin-top-1">
+          <span className="display-inline-block color-black margin-bottom-1">Dabei will ich:</span>
+          <ul className="tags__list">
+            {interests.map(({ interest, checked }, i) => (
+              <li
+                key={`interest-${i}`}
+                className={`tag ${checked ? "is-checked" : ""}`}
+                style={{ cursor: "pointer" }}
+                onClick={handleInterestChange}
+              >
+                {interest}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="margin-top-1">
+          <button className="button button--primary" onClick={() => handleSubmit()}>
+            Finde dein match
+          </button>
         </div>
       </div>
     </div>

@@ -1,0 +1,53 @@
+.display-flex {
+  display: flex;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.show-for-mobile {
+  display: inherit;
+}
+
+.hide-for-mobile {
+  display: none;
+}
+
+.show-for-desktop {
+  display: none;
+}
+
+.hide-for-desktop {
+  display: inherit;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+@include media-query("md") {
+  .show-for-mobile {
+    display: none;
+  }
+
+  .hide-for-mobile {
+    display: inherit;
+  }
+
+  .show-for-desktop {
+    display: inherit;
+  }
+
+  .hide-for-desktop {
+    display: none;
+  }
+}

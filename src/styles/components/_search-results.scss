@@ -1,0 +1,22 @@
+.search-results {
+
+    &__icon {
+        width: 64px;
+        height: 64px;
+        background-color: $grey-20;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 64px;
+    }
+
+    &__text {
+        text-align: center;
+    }
+
+    &__link {
+        color: $blue;
+    }
+}

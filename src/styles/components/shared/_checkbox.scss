@@ -1,0 +1,84 @@
+.checkbox {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.checkbox + label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  width: auto;
+  padding-left: 10px;
+  margin: 0 0 0 20px;
+
+  &::before {
+    // margin-top: 1px;
+    line-height: 1;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -20px;
+    background-color: $white;
+    border: 1px solid $grey;
+    top: 3px;
+    border-radius: 2px;
+  }
+}
+
+.checkbox {
+  &:hover + label {
+    &::before {
+      color: $white;
+    }
+  }
+
+  &:checked + label::before {
+    background-color: $blue;
+    border: 1px solid $blue;
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.8125rem;
+    line-height: 0.8125rem;
+    font-weight: 900;
+    line-height: 1.4;
+    color: $white;
+    text-align: center;
+  }
+
+  &:focus + label::before {
+    box-shadow: 0 0 0 2px rgba($blue, 0.5);
+  }
+
+  // &:disabled + label {
+  //   @include sh-disabled-opacity;
+  //   pointer-events: none;
+  //   cursor: default;
+  // }
+
+  // &.is-invalid {
+  //   + label:before {
+  //     border-color: sh-color('red');
+  //   }
+
+  //   ~ .#{$component}__hint {
+  //     @include sh-color('gray');
+  //     display: block;
+  //     margin-left: 2rem;
+  //     line-height: 1.5625; // suits baseline grid
+  //     line-height: to-rem(30); // suits spacing concept
+
+  //     &::before {
+  //       @include indicator(sh-icon('warning'), sh-color('red'));
+  //       float: left;
+  //       vertical-align: bottom;
+  //       margin-right: to-rem(5);
+  //       margin-left: -.1em; // subtile offset
+  //       margin-top: calc( (30px - 1.7em)/2); // position depends on indicator size and hint line-height
+  //     }
+  //   }
+  // }
+}

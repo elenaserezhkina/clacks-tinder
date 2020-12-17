@@ -1,0 +1,13 @@
+html,
+body {
+  height: 100%;
+  font-size: 100%;
+  position: relative;
+}
+
+html {
+  /* Prevent font scaling in landscape while allowing user zoom */
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-size: $font-size-default;
+}

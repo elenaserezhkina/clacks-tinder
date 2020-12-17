@@ -1,0 +1,89 @@
+.user-profile {
+
+  &__header {
+    background-color: $white;
+    border-bottom: 1px solid $grey-40;
+
+    margin-bottom: 0.5rem;
+
+    @include media-query('sm') {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__hero-block {
+    position: relative;
+  }
+
+  &__back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: $white;
+    background: rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      color: $light-blue;
+      border-color: $light-blue;
+      background: rgba(0, 75, 135, 0.2);
+    }
+  }
+
+  &__cover-image {
+    .aspect {
+      padding-bottom: 50%;
+
+      @include media-query("sm") {
+        padding-bottom: 33.33%;
+      }
+
+      @include media-query("md") {
+        padding-bottom: 25%;
+      }
+    }
+  }
+
+  &__avatar {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    margin-left: -64px;
+    border: 3px solid $white;
+    border-radius: 50%;
+    width: auto;
+  }
+
+  &__avatar-supplement {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 42px;
+    text-align: center;
+
+    .button {
+      line-height: 1.3;
+      font-size: 1.2rem;
+    }
+  }
+  
+  // wrapper
+  &__inner {
+    width: calc(100% - 1rem);
+
+    @include media-query('sm') {
+      width: calc(100% - 2rem);
+    }
+
+    max-width: 960px;
+    margin: 0 auto;
+
+    & .container-fluid {
+      padding: 0;
+    }
+  }
+
+  &__roles {
+    display: inline-flex;
+    margin: 0 auto 1rem;
+  }
+}

@@ -1,0 +1,48 @@
+.preview-link {
+	border-top: none;
+	position: relative;
+}
+
+.preview-link__image,
+.preview-link__text {
+	position: relative;
+}
+
+.preview-link__image img {
+	width: 100%;
+}
+
+.preview-link__image {
+	border: 1px solid #E6E6E6;
+	border-bottom: none;
+}
+
+.preview-link__text {
+	border: 1px solid #E6E6E6;
+	padding: 1rem;
+}
+
+.preview-link__title {
+    margin: 0;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.preview-link__title + .preview-link__description {
+	margin: 0;
+}
+
+.preview-link__description {
+	line-height: 1.2rem;
+    font-size: 0.8625em;
+}
+
+.preview-link__remove-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+    padding: 0.5rem;
+}

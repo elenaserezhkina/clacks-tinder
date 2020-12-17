@@ -1,0 +1,39 @@
+.setting-item {
+        
+    padding: 1rem 0;
+    border-bottom: 1px solid $grey-40;
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-weight: bold;
+        margin: 0;
+        margin-bottom: 0.2rem;
+    }
+
+    &__description {
+        margin-bottom: 0;
+    }
+
+    &__body {
+        padding-top: 1rem;
+        display: none;
+    }
+
+    &.is-expanded &__body {
+        display: block;
+    }
+}

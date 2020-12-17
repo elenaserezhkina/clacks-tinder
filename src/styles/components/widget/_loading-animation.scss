@@ -1,0 +1,114 @@
+@-webkit-keyframes kanan {
+    0% {
+        -webkit-transform:translateX(15px);
+    }
+   
+    50%{
+        -webkit-transform:translateX(-15px);
+    }
+    
+    100%{
+        -webkit-transform:translateX(15px);
+        z-index:200;
+    }
+}
+@-moz-keyframes kanan {
+    0% {
+        -moz-transform:translateX(15px);
+    }
+   
+    50%{
+        -moz-transform:translateX(-15px);
+    }
+    
+    100%{
+        -moz-transform:translateX(15px);
+        z-index:200;
+    }
+}
+@-o-keyframes kanan {
+    0% {
+        -o-transform:translateX(15px);
+    }
+   
+    50%{
+        -o-transform:translateX(-15px);
+    }
+    
+    100%{
+        -o-transform:translateX(15px);
+        z-index:200;
+    }
+}
+
+
+
+
+@-webkit-keyframes kiri {
+    0% {
+        -webkit-transform:translateX(-15px);
+        z-index:200;
+    }
+    50%{
+        -webkit-transform:translateX(15px);
+    }
+    100%{
+        -webkit-transform:translateX(-15px);
+    }
+}
+
+@-moz-keyframes kiri {
+    0% {
+        -moz-transform:translateX(-15px);
+        z-index:200;
+    }
+    50%{
+        -moz-transform:translateX(15px);
+    }
+    100%{
+        -moz-transform:translateX(-15px);
+    }
+}
+@-o-keyframes kiri {
+    0% {
+         -o-transform:translateX(-15px);
+        z-index:200;
+    }
+    50%{
+        -o-transform:translateX(15px);
+    }
+    100%{
+        -o-transform:translateX(-15px);
+    }
+}
+
+.widget-loading-animation {
+    height: 48px;
+    position: relative;
+    padding: 16px 0;
+  
+    & span {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display:inline-block;
+        position:absolute;
+        left: 50%;
+        margin-left: -10px;
+      
+        &:nth-child(1) {
+            background: $light-blue;
+            -webkit-animation: kiri 1s infinite linear;
+            -moz-animation: kiri 1s infinite linear;
+            -o-animation: kiri 1s infinite linear;
+        
+        }
+    
+        &:nth-child(2) {
+            background: $yellow;
+            -webkit-animation: kanan 1s infinite linear;
+            -moz-animation: kanan 1s infinite linear;
+            -o-animation: kanan 1s infinite linear;
+        }
+    }
+}

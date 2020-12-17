@@ -1,0 +1,9 @@
+.employee-network {
+  height: 100%;
+  cursor: grab;
+
+  canvas:focus,
+  .vis-network:focus {
+    outline: none;
+  }
+}

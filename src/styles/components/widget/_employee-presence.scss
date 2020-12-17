@@ -1,0 +1,59 @@
+.widget-employee-presence {
+  
+  &-details {
+
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $grey-20;
+
+    &__state-abbreviation {
+      background-color: $yellow;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      color: $white;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(5px, 22px);
+    }
+
+    &__state-abbreviation--vacation {
+      background-color: $blue;
+    }
+
+    &__state-abbreviation--home-office {
+      background-color: $turquoise;
+    }
+
+    &__state-abbreviation--ill {
+      background-color: $red;
+    }
+
+    &__state-abbreviation--absent {
+      background-color: $light-blue;
+    }
+
+    &__user-info {
+      flex-grow: 1;
+    }
+
+    &__name {
+      font-weight: bold;
+    }
+
+    &__date {
+      text-align: right;
+      color: $grey-80;
+    }
+  }
+
+  &:last-child &-details {
+    border: none;
+  }
+}

@@ -1,0 +1,87 @@
+$mediaobject-gutter-width: 1.666rem;
+
+.media,
+.media__body {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+
+  .media__image {
+    float: left;
+    margin-right: $mediaobject-gutter-width;
+  }
+
+  .media__image--small {
+    margin-right: $mediaobject-gutter-width / 2;
+  }
+
+    .media__image img {
+      display: block;
+    }
+
+  .media__body > :first-child {
+    margin-top: 0;
+  }
+
+.media--right {
+
+  & .media__image {
+    float: right;
+    margin-left: $mediaobject-gutter-width;
+    margin-right: 0;
+  }
+}
+
+/* http://philipwalton.github.io/solved-by-flexbox/demos/media-object/ */
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media__image {
+  margin-right: $mediaobject-gutter-width;
+  flex: 0 9 auto; 
+}
+
+.media__body {
+  flex: 1 1 6em;
+}
+
+.media--right {
+
+  & .media__image {
+    order: 2;
+  }
+}
+
+/// Adds styles to stack sections of a media object. Apply this to the section elements, not the container.
+@mixin media-object-stack {
+  flex-direction: column;
+  align-items: center;
+    
+  .media__image {
+    // width: 100%; // width should be controlled by the image
+    margin-right: auto;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    order: 0;
+  }
+
+  .media__body {
+    flex-basis: auto;
+  }
+}
+
+@include media-query('sm') {
+  .media--stacked-sm-up {
+    @include media-object-stack;
+  }
+}
+
+@include media-query('md') {
+  .media--stacked-md-up {
+    @include media-object-stack;
+  }
+}

@@ -1,0 +1,14 @@
+ol {
+  font-size: 1rem;
+  line-height: 1.625;
+  margin-bottom: 1.5rem;
+  list-style-position: outside;
+  font-family: inherit;
+  margin-left: 1.4rem;
+}
+  
+  ol li ul, 
+  ol li ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0;
+  }

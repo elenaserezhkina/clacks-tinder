@@ -1,0 +1,13 @@
+.badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  background-color: $grey-20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--inline {
+    display: inline-flex;
+  }
+}

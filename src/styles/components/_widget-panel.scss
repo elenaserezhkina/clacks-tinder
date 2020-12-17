@@ -1,0 +1,105 @@
+.widget-panel {
+
+    position: fixed;
+    z-index: 9992;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.3s linear;
+    background-color: $grey-40;
+    // -webkit-box-shadow: inset 5px 0px 10px -10px rgba(0,0,0,0.75);
+    // -moz-box-shadow: inset 5px 0px 10px -10px rgba(0,0,0,0.75);
+    // box-shadow: inset 5px 0px 10px -10px rgba(0,0,0,0.75);
+    
+    &.is-open {
+        pointer-events: inherit;
+        transform: translate3d(0, 0, 0);
+    }
+
+    @include media-query('md') {
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+        left: inherit;
+        right: 0;
+        width: 360px;
+        
+        & + .application-container {
+            transition: right 0.3s linear;
+            right: 0;
+        }
+
+        &.is-open + .application-container {
+            right: 360px;
+        }
+
+        &__close-button {
+            display: none;
+        }
+    }
+
+    &__container {
+        height: 100%;
+        position: relative;
+    }
+
+    &__header {
+        height: 64px;
+        max-height: 64px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-bottom: 1px solid #cdcdcd;
+        background-color: $grey-40;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        justify-content: space-between;
+        padding: 0 1rem;
+
+        button {
+            background-color: $white;
+        }
+
+        // button {
+        //     padding-left: 1.2rem;
+        //     font-size: 1rem;
+        //     cursor: pointer;
+
+        //     i {
+        //         padding-right: 0.25rem;
+        //         font-size: 1.2rem;
+        //         position: relative;
+        //         top: 0.05rem;
+        //     }
+        // }
+    }
+
+    &__list {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+
+        .scroll-container {
+            padding: 1rem 10px 1rem 1rem;
+        }
+        
+        // overflow-y: scroll;
+
+        @include media-query('md') {
+            // transition: none;
+            // overflow-y: inherit;
+            // top: 0;
+        }
+    }
+}

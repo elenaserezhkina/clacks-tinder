@@ -1,0 +1,33 @@
+.module-container {
+  position: absolute;
+  top: 64px;
+  bottom: 48px;
+  left: 0;
+  right: 0;
+
+  @include media-query("sm") {
+    bottom: 0;
+  }
+
+  &__header {
+    position: relative;
+    background-color: $white;
+    border-bottom: 1px solid $grey-40;
+    text-align: center;
+    width: 100%;
+    height: 56px;
+  }
+
+  &__content {
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__header + &__content {
+    top: 56px;
+  }
+}

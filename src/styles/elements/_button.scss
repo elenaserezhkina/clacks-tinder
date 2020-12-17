@@ -1,0 +1,46 @@
+/* Buttons */
+
+button {
+  font-size: 1rem;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+.button {
+  color: inherit;
+  border-style: none;
+  border-width: 0;
+  cursor: pointer;
+  font-family: $font-family-text;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-right: 1.6rem;
+  padding-bottom: 1rem;
+  padding-left: 1.6rem;
+  font-size: 0.9375rem;
+}
+
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button:hover,
+.button:focus {
+  background-color: transparent;
+  color: inherit;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button--edit {
+  border: none !important;
+}

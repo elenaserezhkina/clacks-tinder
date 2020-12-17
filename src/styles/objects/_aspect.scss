@@ -1,0 +1,63 @@
+
+$aspect-ratios: (
+    (1, 1),
+    (2, 1),
+    (3, 1),
+    (4, 1),
+    (4, 3),
+    (16, 9)
+);
+
+@mixin aspect-ratios($mq: '') {
+    @each $ratio in $aspect-ratios {
+        // Grab the aspect ratios from the list
+        $width:  nth($ratio, 1);
+        $height: nth($ratio, 2);
+
+        .aspect-#{$width}x#{$height} {
+            padding-bottom: ($height / $width) * 100%;
+        }
+    }
+}
+
+.aspect,
+[class*="aspect"] {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 100%;
+    background: $grey-20;
+
+    & > div,
+    & > img {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    & > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.aspect--cover {
+    & > img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.aspect--round {
+    border-radius: 999rem;
+}
+  
+@include aspect-ratios($aspect-ratios);

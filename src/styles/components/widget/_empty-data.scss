@@ -1,0 +1,30 @@
+.widget-empty-data {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    background-color: $grey-20;
+    margin: 0 auto 1rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 64px;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &--grey {
+    background-color: $grey-20;
+
+    .widget-empty-data__icon {
+      background-color: $white;
+    }
+  }
+}

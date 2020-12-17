@@ -1,0 +1,113 @@
+.comments {
+  border-top: 1px solid $grey-40;
+
+  &__load-more {
+    margin: 1rem;
+  }
+}
+
+.comment {
+  display: flex;
+  padding: 0.5rem;
+  padding-bottom: 0;
+
+  @include media-query("md") {
+    padding: 1rem;
+    padding-bottom: 0;
+  }
+
+  &__prefix,
+  &__postfix {
+    width: 42px;
+  }
+
+  &__prefix {
+    order: 1;
+  }
+
+  &__body {
+    order: 2;
+    flex: 1;
+  }
+
+  &__postfix {
+    order: 3;
+  }
+
+  &__avatar {
+    display: block;
+    border-radius: 99rem;
+    border: 1px solid $white;
+  }
+
+  &__content {
+    background-color: $white;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 0.5rem;
+    margin-left: 16px;
+    position: relative;
+
+    &::before {
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid $white;
+      position: absolute;
+      top: 15px;
+      left: -8px;
+      display: block;
+      content: "";
+    }
+  }
+
+  &__meta {
+    font-size: 0.8em;
+  }
+
+  &__credits {
+    font-weight: bold;
+  }
+
+  &__date {
+    color: $grey-60;
+  }
+
+  &__fulltext {
+    word-break: break-word;
+
+    a {
+      color: #004b87;
+    }
+  }
+
+  &__toolbar {
+    padding-left: 16px;
+
+    .button--like {
+      padding-top: 3px;
+      padding-right: 0;
+      border: 0;
+
+      &.is-liked {
+        color: $red;
+        animation: heartbeat 1.5s ease-in-out;
+      }
+    }
+  }
+
+  .button--edit {
+    padding-top: 0;
+  }
+
+  &__edit-form {
+    textarea {
+      margin: 0.5rem 0;
+    }
+
+    button {
+      margin-left: 0.5rem;
+    }
+  }
+}

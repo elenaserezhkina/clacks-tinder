@@ -1,0 +1,155 @@
+.search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    pointer-events: none;
+
+    &__bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background-color: $black;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &__form {
+        width: calc(100% - 2rem);
+        max-width: 960px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__fog-layer {
+        width: 100%;
+        height: 100%;
+        opacity: 0;   
+        background-color: rgba(0,0,0,.5);
+        opacity: 1;
+        visibility: hidden;
+        transition: opacity .3s,visibility .3s;
+    }
+
+    &__button {
+
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        color: $white;
+        margin-left: 1rem;
+
+        &--primary {
+            background-color: $yellow;
+            color: $black;
+            border-radius: 99rem;
+            font-size: 1rem;
+
+            &:hover {
+                color: $black;
+                background-color: $yellow-hover;
+            }
+
+            &:focus {
+                color: $black;
+                background-color: $yellow-hover;
+            }
+        }
+
+        &--secondary {
+            font-size: 1.5rem;
+
+            &:hover {
+                color: $white;
+            }
+
+            &:focus {
+                color: $white;
+            }
+        }
+    }
+
+    &__input {
+        font-family: $font-family-text;
+        background-color: transparent;
+        border: none;
+        height: 32px;
+        font-size: 1.2rem;
+        color: $white;
+        padding: 0;
+        width: 844px;
+        font-size: 1rem;
+        
+        &:placeholder {
+            color: $grey-80; 
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__suggestions {
+        position: absolute;
+        top: 64px;
+        left: calc(50% - 480px);
+        width: 844px;
+        padding: 2em;
+        margin: 0 auto;
+        background-color: $white;
+        box-shadow: 0 4px 40px rgba(0,0,0,.39);
+        display: none;
+    }
+
+    &.is-active {
+
+        pointer-events: inherit;
+
+        .search__bar {
+            opacity: 1;
+            visibility: visible;
+            animation: cd-slide-in 0.3s;
+        }
+
+        // Future feature
+
+        // .search__suggestions {
+        //     transform-origin: center top;
+        //     animation: cd-3d-rotation 0.5s 0.3s;
+        //     animation-fill-mode: backwards;
+        //     transform: translateZ(0);
+        //     backface-visibility: hidden;
+        //     display: block;
+        // }
+        
+        .search__fog-layer {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+@keyframes cd-slide-in {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+@keyframes cd-3d-rotation {
+    0% {
+      transform: perspective(1000px) rotateX(-90deg);
+    }
+    100% {
+      transform: perspective(1000px) translateY(0);
+    }
+}

@@ -1,0 +1,152 @@
+.post-panel {
+  background-color: white;
+  border-top: 1px solid $grey-40;
+  border-bottom: 1px solid $grey-40;
+
+  @include media-query("sm") {
+    border: 1px solid $grey-40;
+    border-radius: 2px;
+  }
+
+  &__wrapper {
+    padding: 1rem 0.5rem;
+
+    @include media-query("sm") {
+      padding: 1rem;
+    }
+  }
+
+  & + & {
+    margin-top: 0.5rem;
+  }
+
+  &.is-editing {
+    .post__assets,
+    .post__toolbar,
+    .post__comments {
+      display: none;
+    }
+  }
+}
+
+.post {
+  // background-color: white;
+  // border-top: 1px solid $grey-40;
+  // border-bottom: 1px solid $grey-40;
+
+  // @include media-query('sm') {
+  //     border: 1px solid $grey-40;
+  //     border-radius: 2px;
+  // }
+
+  &__header {
+    display: flex;
+  }
+
+  &__toolbar {
+    @include clearfix;
+  }
+
+  &__avatar,
+  &__meta {
+  }
+
+  &__content {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    word-break: break-word;
+  }
+
+  &__link {
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    display: block;
+  }
+
+  &__link,
+  &__link:hover {
+    color: $blue;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  &__assets {
+    margin-bottom: 1rem;
+  }
+
+  &__toolbar {
+    &.is-liked .fa-heart {
+      color: $red;
+      animation: heartbeat 1.5s ease-in-out;
+    }
+
+    &.is-expanded .fa-comment {
+      color: $light-blue;
+      animation: poke 1.5s ease-in-out;
+    }
+  }
+
+  &__avatar {
+    width: 42px;
+  }
+
+  &__meta {
+    padding-left: 0.5rem;
+    color: $grey-60;
+  }
+
+  &__title {
+    color: $blue;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
+
+  &__credits {
+  }
+
+  &__credit-link {
+    color: black;
+    font-weight: bold;
+  }
+
+  &__date {
+  }
+
+  &__actions {
+    margin-left: auto;
+  }
+
+  &__comments {
+    overflow: hidden;
+    max-height: 0;
+    background-color: $grey-20;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-transition: max-height 0.3s ease-in;
+    transition: max-height 0.3s ease-in;
+
+    &.is-expanded {
+      max-height: none;
+    }
+  }
+
+  & + & {
+    margin-top: 1rem;
+  }
+
+  &__edit-form {
+    margin-top: 1rem;
+
+    .toolbar {
+      // border-bottom: 1px solid #f6f6f6;
+      padding: 0.25rem 0;
+    }
+  }
+}

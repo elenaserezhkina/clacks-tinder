@@ -1,0 +1,39 @@
+.comment-form {
+  width: 100%;
+  padding: 0.5rem;
+
+  @include media-query('md') {
+    padding: 1rem;
+  }
+
+  &__input {
+    position: relative;
+  }
+
+  button {
+    position: absolute;
+    bottom: 0.25rem;
+  }
+
+  button:first-of-type {
+    left: 0;
+  }
+
+  button:last-of-type {
+    right: 0;
+    color: $light-blue;
+
+    &[disabled] {
+      color: inherit;
+    }
+  }
+
+  textarea {
+    min-height: 42px;
+    padding: 0.5rem 3rem;
+    background-color: $white;
+    border-radius: 0.5rem;
+    width: 100%;
+    line-height: 1.6;
+  }
+}

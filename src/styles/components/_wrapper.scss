@@ -1,0 +1,52 @@
+
+
+
+
+
+
+
+// .post-wrapper,
+// .comment-wrapper {
+//     padding: 16px;
+//     position: relative;
+//     @include clearfix;
+// }
+
+.content-wrapper {
+  width: 100%;
+}
+
+@include media-query('sm') {
+
+    .content-wrapper {
+        width: 630px;
+        margin: 0 auto;
+    }
+}
+
+@include media-query('md') {
+
+    .content-wrapper {
+        // margin-left: 0;
+    }
+    
+    .app-wrapper {
+        width: 956px;
+        margin: 0 auto;
+    }
+}
+
+@include media-query('lg') {
+
+    .app-wrapper {
+        // width: 1150px;
+        width: 630px;
+        padding-top: 80px;
+        padding-bottom: 20px;
+    }
+
+    .content-wrapper {
+        padding: 0;
+        // margin-left: 200px;
+    }
+}

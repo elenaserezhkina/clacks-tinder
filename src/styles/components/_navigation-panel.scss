@@ -1,0 +1,20 @@
+.navigation-panel {
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-top: 1px solid #dddddd;
+    background-color: $white;
+    transition: transform 0.3s ease-in-out;
+
+    &.is-down {
+        transform: translate3d(0, 100%, 0);
+    }
+
+    @include media-query('sm') {
+        position: static;
+        border-top: none;
+    }
+}

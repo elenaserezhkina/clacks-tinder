@@ -1,0 +1,221 @@
+// Base colors
+
+.color-black {
+  color: $black !important;
+}
+
+.color-white {
+  color: $white !important;
+}
+
+.color-grey {
+  color: $grey !important;
+
+  &-80 {
+    color: $grey-80 !important;
+  }
+
+  &-60 {
+    color: $grey-60 !important;
+  }
+
+  &-40 {
+    color: $grey-40 !important;
+  }
+
+  &-20 {
+    color: $grey-20 !important;
+  }
+}
+
+.color-blue {
+  color: $blue !important;
+
+  &-80 {
+    color: $blue-80 !important;
+  }
+
+  &-60 {
+    color: $blue-60 !important;
+  }
+
+  &-40 {
+    color: $blue-40 !important;
+  }
+
+  &-20 {
+    color: $blue-20 !important;
+  }
+}
+
+.color-light-blue {
+  color: $light-blue !important;
+
+  &-80 {
+    color: $light-blue-80 !important;
+  }
+
+  &-60 {
+    color: $light-blue-60 !important;
+  }
+
+  &-40 {
+    color: $light-blue-40 !important;
+  }
+
+  &-20 {
+    color: $light-blue-20 !important;
+  }
+}
+
+.color-turquoise {
+  color: $turquoise !important;
+
+  &-80 {
+    color: $turquoise-80 !important;
+  }
+
+  &-60 {
+    color: $turquoise-60 !important;
+  }
+
+  &-40 {
+    color: $turquoise-40 !important;
+  }
+
+  &-20 {
+    color: $turquoise-20 !important;
+  }
+}
+
+.color-yellow {
+  color: $yellow !important;
+
+  &-80 {
+    color: $yellow-80 !important;
+  }
+
+  &-60 {
+    color: $yellow-60 !important;
+  }
+
+  &-40 {
+    color: $yellow-40 !important;
+  }
+
+  &-20 {
+    color: $yellow-20 !important;
+  }
+}
+
+.color-red {
+  color: $red !important;
+
+  &-80 {
+    color: $red-80 !important;
+  }
+
+  &-60 {
+    color: $red-60 !important;
+  }
+
+  &-40 {
+    color: $red-40 !important;
+  }
+
+  &-20 {
+    color: $red-20 !important;
+  }
+}
+
+.color-berry {
+  color: $berry !important;
+
+  &-80 {
+    color: $berry-80 !important;
+  }
+
+  &-60 {
+    color: $berry-60 !important;
+  }
+
+  &-40 {
+    color: $berry-40 !important;
+  }
+
+  &-20 {
+    color: $berry-20 !important;
+  }
+}
+
+.color-green {
+  color: $green !important;
+
+  &-80 {
+    color: $green-80 !important;
+  }
+
+  &-60 {
+    color: $green-60 !important;
+  }
+
+  &-40 {
+    color: $green-40 !important;
+  }
+
+  &-20 {
+    color: $green-20 !important;
+  }
+}
+
+.bg-color-black {
+  background-color: $black !important;
+}
+
+.bg-color-grey {
+  background-color: $grey !important;
+
+  &-80 {
+    background-color: $grey-80 !important;
+  }
+
+  &-60 {
+    background-color: $grey-60 !important;
+  }
+
+  &-40 {
+    background-color: $grey-40 !important;
+  }
+
+  &-20 {
+    background-color: $grey-20 !important;
+  }
+}
+
+.bg-color-green {
+  background-color: $green !important;
+}
+
+.bg-color-red {
+  background-color: $red !important;
+}
+
+.bg-color-berry {
+  background-color: $berry !important;
+}
+
+.bg-color-blue {
+  background-color: $blue !important;
+}
+
+.bg-color-yellow {
+  background-color: $yellow !important;
+}
+
+.bg-color-light-blue {
+  background-color: $light-blue !important;
+}
+
+.bg-color-turquoise {
+  background-color: $turquoise !important;
+}

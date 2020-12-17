@@ -1,0 +1,17 @@
+.textarea {
+  font-family: $font-family-text;
+  appearance: none;
+  resize: none;
+  min-height: inherit;
+
+  background-color: $grey-20;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.8125em;
+  border: none;
+}
+
+.textarea:focus {
+  outline: none;
+}

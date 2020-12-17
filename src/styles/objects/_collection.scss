@@ -1,0 +1,35 @@
+.collection {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.collection-item {
+
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+
+  &__content {
+    flex: 1 1;
+  }
+
+  & > &__additional-content {
+    flex: none;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+
+    & > .collection-item__additional-content {
+      padding-left: 0;
+      padding-right: 0.5rem;
+    }
+  }
+}

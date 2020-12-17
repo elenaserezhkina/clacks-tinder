@@ -1,0 +1,65 @@
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  &__checkbox {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 32px;
+    margin: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__label {
+    display: block;
+    overflow: hidden;
+    border: 1px solid $grey-60;
+    border-radius: 4px;
+    height: 32px;
+    background-color: $grey-20;
+    transition: all 0.3s ease-in;
+  }
+
+  &__switch {
+    display: block;
+    width: 20px;
+    margin: 6px;
+    background: $white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 28px;
+    border: 1px solid $grey-60;
+    border-radius: 4px;
+    transition: all 0.3s ease-in;
+  }
+
+  &__checkbox:checked + &__label {
+    border-color: $light-blue;
+    background-color: $light-blue-60;
+  }
+
+  &__checkbox:checked + &__label &__switch {
+    right: 0px;
+    border-color: $light-blue;
+  }
+
+  &__checkbox:disabled + &__label {
+    border-color: $grey-60;
+    background-color: $grey-20;
+    opacity: 0.5;
+  }
+
+  &__checkbox:disabled + &__label &__switch {
+    right: 0px;
+    border-color: $grey-60;
+    opacity: 0.5;
+  }
+}

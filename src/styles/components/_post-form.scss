@@ -1,0 +1,101 @@
+.post-form {
+  max-width: 630px;
+  margin: 0 auto 0.5rem auto;
+  transition: none;
+
+  & textarea {
+    background-color: $grey-20;
+    min-height: inherit;
+  }
+
+  &__intro,
+  &__header {
+    padding: 1rem 0.5rem;
+
+    @include media-query('sm') {
+      padding: 1rem;
+    }
+  }
+
+  &__header {
+    padding-bottom: 0;
+  }
+
+  &__content,
+  &__assets {
+    padding: 0 1rem;
+    border-bottom: 1px solid $grey-20;
+  }
+
+  &__content {
+    padding: 1rem 0.5rem;
+
+    @include media-query('sm') {
+      padding: 1rem;
+    }
+  }
+
+  &__toolbar,
+  &__assets {
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+  }
+
+  &__assets {
+    overflow-y: hidden;
+  }
+
+  &__intro {
+    display: flex;
+    align-items: center;
+  }
+
+  &__intro-text {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    flex-grow: 1;
+    background-color: $grey-20;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  &__intro-icon {
+    background-color: $grey-20;
+    border-radius: 42px;
+    width: 42px;
+    text-align: center;
+  }
+
+  &__main {
+    display: none;
+  }
+
+  &.is-enabled {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    z-index: 100000;
+    overflow-y: auto;
+
+    @include media-query('sm') {
+      position: static;
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+      margin: 0 auto 0.5rem auto;
+    }
+
+    .post-form__main {
+      display: block;
+    }
+
+    .post-form__intro {
+      display: none;
+    }
+  }
+}

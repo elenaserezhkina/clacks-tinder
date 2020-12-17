@@ -1,0 +1,19 @@
+.content-container {
+  padding: 0.5rem 0;
+
+  @include media-query('sm') {
+    padding: 1rem 0;
+  }
+
+  &--settings {
+    max-width: 630px;
+  }
+
+  &--projects {
+    max-width: 1200px;
+  }
+
+  &--centered {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,74 @@
+.avatar {
+  width: 42px;
+  position: relative;
+
+  &--medium {
+    width: 128px;
+  }
+
+  &--small {
+    width: 32px;
+  }
+
+  &__supplement {
+    background-color: $black;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    color: $white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(3px, 3px);
+  }
+}
+
+.avatar--badge {
+  border: 2px solid white;
+  border-radius: 50%;
+  // box-shadow: 0px 3px 8px rgba(44, 44, 84, 0.2);
+  display: inline-block;
+  background: white;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center center;
+  transition: all 200ms ease;
+}
+.avatar--badge:nth-of-type(n+2) {
+  margin-left: -12px;
+}
+.avatar--badge:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  box-shadow: 0px 8px 20px rgba(44, 44, 84, 0.2);
+}
+.avatar--badge:hover:after {
+  position: absolute;
+  content: attr(username);
+  background: rgba(255, 255, 255, 0.95);
+  color: inherit;
+  font-size: 10px;
+  padding: 4px;
+  width: auto;
+  bottom: -.5rem;
+  right: -.5rem;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  border-radius: .15rem;
+  -webkit-animation: fade 100ms ease 750ms forwards;
+          animation: fade 100ms ease 750ms forwards;
+}
+.avatar-list {
+  display: flex;
+  position: relative;
+  width: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.avatar-list:hover .avatar--badge:nth-of-type(n+2) {
+  margin-left: 7px;
+}

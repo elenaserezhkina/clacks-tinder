@@ -1,0 +1,101 @@
+@keyframes widget-placeholder-shimmer {
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.widget-placeholder {
+
+    background-color: $white;
+    border: 1px solid $grey-40;
+    border-radius: 4px;
+    min-height: 200px;
+
+    &__background {
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: widget-placeholder-shimmer;
+        animation-timing-function: linear;
+        background: #f6f7f8;
+        background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+        background-size: 800px 104px;
+        height: 140px;
+        position: relative;
+    }
+}
+
+.background-masker {
+    background: #fff;
+    position: absolute;
+}
+
+/* Every thing below this is just positioning */
+
+.background-masker.content-top {
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+
+.background-masker.content-first-line-start,
+.background-masker.content-second-line-start,
+.background-masker.content-third-line-start,
+.background-masker.content-fourth-line-start {
+    top: 60px;
+    left: 0;
+    width: 1rem;
+    height: 8px;
+}
+
+.background-masker.content-first-line-end,
+.background-masker.content-second-line-end,
+.background-masker.content-third-line-end,
+.background-masker.content-fourth-line-end {
+    top: 60px;
+    right: 0;
+    width: 1rem;
+    height: 8px;
+}
+
+.background-masker.content-first-line-sep,
+.background-masker.content-second-line-sep,
+.background-masker.content-third-line-sep,
+.background-masker.content-fourth-line-sep {
+    top: 68px;
+    left: 0;
+    right: 0;
+    height: 10px;
+}
+
+.background-masker.content-second-line-start,
+.background-masker.content-second-line-end {
+    top: 78px;
+}
+
+.background-masker.content-second-line-sep {
+    top: 86px;
+    height: 20px;
+}
+
+.background-masker.content-third-line-start,
+.background-masker.content-third-line-end {
+    top: 106px;
+}
+
+.background-masker.content-third-line-sep {
+    top: 114px;
+}
+
+.background-masker.content-fourth-line-start,
+.background-masker.content-fourth-line-end {
+    top: 124px;
+}
+
+.background-masker.content-fourth-line-sep {
+    top: 132px;
+}

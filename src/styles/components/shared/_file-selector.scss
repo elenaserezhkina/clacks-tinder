@@ -1,0 +1,15 @@
+.file-selector {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+
+    > input[type=file] {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 400px;
+        height: 300px;
+        cursor: pointer;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,97 @@
+@import "../../Utils/Color.scss";
+
+.winner {
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  animation-name: tada;
+  animation-duration: 1s;
+}
+.wrapper {
+  padding-bottom: 60px;
+  background-color: $mainPink;
+  h1 {
+    margin-top: 1px;
+  }
+}
+.background-white {
+  margin: 20px;
+  background-color: white;
+  border-radius: 15px;
+  margin-bottom: 0;
+  padding: 20px;
+}
+.picture {
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 350px;
+  width: auto;
+}
+.chat {
+  height: 40px;
+  margin-top: 290px;
+  margin-left: 60px;
+  animation-name: lightSpeedIn;
+  animation-duration: 1s;
+}
+.profile {
+  height: 80px;
+  margin-top: 90px;
+  animation-name: lightSpeedIn;
+  animation-duration: 0.5s;
+}
+@keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}

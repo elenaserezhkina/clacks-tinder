@@ -1,0 +1,17 @@
+dl {
+  font-size: 1rem;
+  line-height: 1.625;
+  margin-bottom: 1.5rem;
+  list-style-position: outside;
+  font-family: inherit;
+  margin-left: 1.4rem;
+  
+  & dt {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+  }
+
+  & dd {
+    margin-bottom: 0.75rem;
+  }
+}

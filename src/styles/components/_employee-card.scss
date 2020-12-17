@@ -1,0 +1,41 @@
+.employee-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+
+  @include media-query("xs") {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  & .card__header {
+    width: 96px;
+    position: relative;
+
+    @include media-query("xs") {
+      width: inherit;
+    }
+  }
+  &__status {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+
+    .tags__list,
+    .tag {
+      margin-bottom: 0;
+    }
+  }
+
+  & .card__body {
+    padding: 0.5rem 1rem;
+  }
+
+  &__fullname {
+    font-weight: bold;
+  }
+
+  &__organisation {
+    margin-bottom: 0;
+  }
+}

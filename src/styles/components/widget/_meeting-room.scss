@@ -1,0 +1,63 @@
+.widget-meeting-room {
+  
+  &__info {
+    position: relative;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid $grey-20;
+    cursor: pointer;
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translate(0, -50%);
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__meeting {
+
+    display: flex;
+    padding-left: 0.25rem;
+    padding-top: 0.5rem;
+
+    &-time {
+      
+    }
+
+    &-title {
+      margin-left: 0.75rem;
+      padding: 0.5rem;
+      width: 100%;
+      background-color: $grey-20;
+      border-radius: 4px;
+    }
+  }
+
+  &__details {
+    display: none;
+  }
+
+  &:last-child {
+    .widget-meeting-room__info {
+      border: none;
+    }
+    &.is-expanded {
+      .widget-meeting-room__info {
+        border-bottom: 1px solid $grey-20;
+      }
+    }
+  }
+
+  &.is-expanded {
+    .widget-meeting-room__details {
+      display: block;
+    }
+  }
+}

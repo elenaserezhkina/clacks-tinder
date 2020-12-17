@@ -1,0 +1,22 @@
+.info-list {
+
+  margin-bottom: 0.5rem;
+
+  &__item {
+    padding-bottom: 0;
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+  }
+
+  &__input {
+    padding: 0.5rem;
+  }
+
+  &__link {
+    border-bottom: 1px solid;
+  }
+}

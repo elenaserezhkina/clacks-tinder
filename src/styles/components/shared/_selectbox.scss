@@ -1,0 +1,22 @@
+// Background
+$ember-power-select-background-color: white;
+$ember-power-select-multiple-selection-background-color: $grey-40;
+
+// Border
+$ember-power-select-border-color: $grey-60;
+$ember-power-select-option-padding: 18px;
+$ember-power-select-multiple-option-border: none;
+
+$ember-power-select-trigger-ltr-padding: 0.5rem 0 0 0.5rem;
+$ember-power-select-multiple-option-padding: 0.625rem;
+$ember-power-select-multiple-option-line-height: 0.938rem;
+
+.ember-power-select-multiple-option {
+  font-size: 0.8rem;
+  margin: 0 0.5rem 0.5rem 0 !important;
+}
+
+// line-height: 0.938rem;
+// margin: 0 0.5rem 0.5rem 0;
+// padding: 0.625rem;
+// font-size: 0.8rem;

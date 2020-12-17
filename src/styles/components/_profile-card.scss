@@ -1,0 +1,45 @@
+.profile-card {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  &__headline {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid #ebebeb;
+  }
+
+  &__button {
+    padding: 0.5rem;
+    border: 1px solid $grey-40;
+    border-radius: 4px;
+
+    &--primary {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &__body {
+    > div > *:first-child {
+      margin-top: 0;
+    }
+
+    > div > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
