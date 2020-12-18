@@ -5,6 +5,7 @@ import HeartAnimation from "../../Components/HeartAnimation/HeartAnimation";
 import { useUser } from "../../UserProvider";
 import { useHistory, Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import UserCard from "../../Components/UserInfo/UserCard";
 
 function Match(props) {
   const { employees } = useUser();
@@ -36,7 +37,12 @@ function Match(props) {
           <h1>{matchedUser?.name}</h1>
         </p>
         <div className="background-white">
-          <div style={{ backgroundImage: `url(${matchedUser?.image})` }} className="picture"></div>
+          <div class="row center-lg">
+            <div class="col-xs-12 col-lg-4 ">
+              <UserCard user={matchedUser} />
+            </div>
+          </div>
+
           <div className="row center-xs margin-top-2">
             <div className="col-xs-12">
               <Link to="/my-matches" className="button button--primary">

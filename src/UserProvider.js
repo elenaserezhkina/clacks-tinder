@@ -81,6 +81,7 @@ const employeesReducer = (state, action) => {
     default:
       return;
   }
+  // add coffee
 };
 
 export const UserProvider = ({ children }) => {
