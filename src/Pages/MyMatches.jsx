@@ -53,7 +53,7 @@ const MyMatches = () => {
           <div className="row top-xs">
             {getMyMatches().map((employee) => (
               <div key={`match-${employee.id}`} className="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <UserCard user={employee} />
+                <UserCard user={employee} hasFakeImage />
               </div>
             ))}
           </div>

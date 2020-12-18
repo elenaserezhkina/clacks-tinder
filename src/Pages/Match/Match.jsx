@@ -39,7 +39,7 @@ function Match(props) {
         <div className="background-white">
           <div class="row center-lg">
             <div class="col-xs-12 col-lg-4 ">
-              <UserCard user={matchedUser} />
+              <UserCard hasFakeImage user={matchedUser} />
             </div>
           </div>
 
