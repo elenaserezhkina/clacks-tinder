@@ -19,10 +19,12 @@ function Matching() {
       return employee.reasons.some((reasons) => user.reasons.includes(reasons));
     });
 
-    const usersWithSameInterests = usersWithSameReasons.filter((employee) => {
-      console.log(employee.interests.some((interests) => user.interests.includes(interests)));
-      return employee.interests.some((interests) => user.interests.includes(interests));
-    });
+    const usersWithSameInterests = user.interests.length
+      ? usersWithSameReasons.filter((employee) => {
+          console.log(employee.interests.some((interests) => user.interests.includes(interests)));
+          return employee.interests.some((interests) => user.interests.includes(interests));
+        })
+      : usersWithSameReasons;
 
     const usersWithoutAMatch = usersWithSameInterests.filter((employee) => {
       return !user.matches.includes(employee.id);

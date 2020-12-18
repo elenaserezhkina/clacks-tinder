@@ -120,18 +120,7 @@ export const UserProvider = ({ children }) => {
       "Flirten",
       "Laufen",
     ],
-    interests: [
-      "Mood",
-      "Bugs",
-      "Füßball",
-      "lästern",
-      "Kreuzworträtsel",
-      "Yoga",
-      "Zumba",
-      "Gymnastik",
-      "Rückenübungen",
-      "Bier",
-    ],
+    interests: ["Laufen gehen", "Füßball", "Yoga", "Zumba", "Gymnastik", "Rückenübungen"],
   });
 
   return (
