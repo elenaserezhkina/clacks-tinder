@@ -20,12 +20,15 @@ function Matching() {
     });
 
     const usersWithSameInterests = usersWithSameReasons.filter((employee) => {
+      console.log(employee.interests.some((interests) => user.interests.includes(interests)));
       return employee.interests.some((interests) => user.interests.includes(interests));
     });
 
     const usersWithoutAMatch = usersWithSameInterests.filter((employee) => {
       return !user.matches.includes(employee.id);
     });
+
+    console.log(usersWithoutAMatch);
 
     return usersWithoutAMatch;
   };
@@ -41,9 +44,16 @@ function Matching() {
     if (!matchingUsers.length) {
       setMatchingUser(null);
       setMatchingIndex(null);
+      return;
     }
 
     let idx = getRandomArbitrary(0, matchingUsers.length);
+
+    if (matchingUsers.length === 1) {
+      setMatchingUser(matchingUsers[idx]);
+      setMatchingIndex(idx);
+      return;
+    }
 
     while (idx === previousIdx) {
       idx = getRandomArbitrary(0, matchingUsers.length);
