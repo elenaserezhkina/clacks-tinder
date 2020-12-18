@@ -6,7 +6,7 @@ import { useUser } from "../UserProvider";
 
 function Matching() {
   const { user, employees, dispatchUserAction } = useUser();
-  const [matchingIndex, setMatchingIndex] = useState(0);
+  const [matchingIndex, setMatchingIndex] = useState(null);
   const [matchingUser, setMatchingUser] = useState(null);
   const history = useHistory();
 
@@ -37,6 +37,12 @@ function Matching() {
   const getNextUser = () => {
     const matchingUsers = getUsersWithSameReasonsAndInterests();
     const previousIdx = matchingIndex;
+
+    if (!matchingUsers.length) {
+      setMatchingUser(null);
+      setMatchingIndex(null);
+    }
+
     let idx = getRandomArbitrary(0, matchingUsers.length);
 
     while (idx === previousIdx) {

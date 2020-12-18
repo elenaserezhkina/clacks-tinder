@@ -91,17 +91,17 @@ export const UserProvider = ({ children }) => {
     userReducer,
     savedUser || {
       id: 1,
-      name: "Olena @os",
+      name: "Tobi @ta",
       active: false,
       matches: [],
-      reasons: [],
-      interests: ["Mood", "Bugs"],
+      reasons: ["Sport"],
+      interests: [],
       description: "Lorem ipsum",
       coffeePoints: 0,
       gossipPoints: 0,
       gamePoints: 0,
       fakeImage: null,
-      image: "https://clacksnack.clacks.de/conterior/gallery/employees/311819/1601023543_19280.jpg",
+      image: "https://clacksnack.clacks.de/conterior/gallery/employees/13/tobias_alich_gelb.jpg",
     }
   );
 

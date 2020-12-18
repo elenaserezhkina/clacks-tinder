@@ -24,7 +24,7 @@ function UserCard({ user, hasFakeImage }) {
         </div>
       </div>
       <div className="card__body">
-        <h5 className="employee-card__fullname">{user?.name}</h5>
+        <h5 className="employee-card__fullname">{!hasFakeImage ? user?.name : ""}</h5>
         <ul className="tags__list">
           {interests.map((interest, i) => (
             <li key={`tags-user-${user.id}-${i}`} className="tag">

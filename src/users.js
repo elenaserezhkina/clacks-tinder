@@ -83,6 +83,20 @@ const users = [
     image: "https://clacksnack.clacks.de/conterior/gallery/employees/2/1598035541_44487.jpg",
     fakeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKK8tK-bcO1CgKAsnnyKVjf8Mx4AYF9Mqew&usqp=CAU",
   },
+  {
+    id: 8,
+    name: "Olena @os",
+    active: true,
+    matches: [1, 4, 3],
+    reasons: ["Kaffee trinken"],
+    interests: ["Mood", "Bier", "Bugs"],
+    description: "Lorem ipsum",
+    coffeePoints: 7,
+    gossipPoints: 0,
+    gamePoints: 50,
+    image: "https://clacksnack.clacks.de/conterior/gallery/employees/311819/1601023543_19280.jpg",
+    fakeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKK8tK-bcO1CgKAsnnyKVjf8Mx4AYF9Mqew&usqp=CAU",
+  },
 ];
 
 export { users };
