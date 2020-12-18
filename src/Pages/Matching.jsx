@@ -15,9 +15,11 @@ function Matching() {
   }, []);
 
   const getUsersWithSameReasonsAndInterests = () => {
-    const usersWithSameReasons = employees.filter((employee) => {
-      return employee.reasons.some((reasons) => user.reasons.includes(reasons));
-    });
+    const usersWithSameReasons = user.reasons.length
+      ? employees.filter((employee) => {
+          return employee.reasons.some((reasons) => user.reasons.includes(reasons));
+        })
+      : employees;
 
     const usersWithSameInterests = user.interests.length
       ? usersWithSameReasons.filter((employee) => {

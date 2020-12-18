@@ -95,7 +95,7 @@ export const UserProvider = ({ children }) => {
       name: "Tobi @ta",
       active: false,
       matches: [],
-      reasons: ["Sport"],
+      reasons: [],
       interests: [],
       description: "Lorem ipsum",
       coffeePoints: 0,

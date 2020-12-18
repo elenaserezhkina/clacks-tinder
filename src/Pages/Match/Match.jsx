@@ -31,11 +31,6 @@ function Match(props) {
     <React.Fragment>
       <div className="wrapper">
         <Header />
-
-        <p className="winner">
-          it's <br />
-          <h1>{matchedUser?.name}</h1>
-        </p>
         <div className="background-white">
           <div class="row center-lg">
             <div class="col-xs-12 col-lg-4 ">
